@@ -10,15 +10,21 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class RPNCalculatorTest {
+
+    private val calc = RPNCalculator()
+
     @Test
     fun `given '1' return 1`() {
-        val calc = RPNCalculator()
         assertEquals(1, calc.calculate("1"))
     }
 
     @Test
     fun `given '2' return 2`() {
-        val calc = RPNCalculator()
         assertEquals(2, calc.calculate("2"))
+    }
+
+    @Test
+    fun `given '1 1 +' return 2`() {
+        assertEquals(2, calc.calculate("1 1 +"))
     }
 }
