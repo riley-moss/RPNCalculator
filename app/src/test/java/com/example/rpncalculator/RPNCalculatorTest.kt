@@ -27,4 +27,9 @@ class RPNCalculatorTest {
     fun `given '1 1 +' return 2`() {
         assertEquals(2, calc.calculate("1 1 +"))
     }
+
+    @Test
+    fun `given '2 1 -' return 1`() {
+        assertEquals(1, calc.calculate("2 1 -"))
+    }
 }
