@@ -15,4 +15,10 @@ class RPNCalculatorTest {
         val calc = RPNCalculator()
         assertEquals(1, calc.calculate("1"))
     }
+
+    @Test
+    fun `given '2' return 2`() {
+        val calc = RPNCalculator()
+        assertEquals(2, calc.calculate("2"))
+    }
 }
