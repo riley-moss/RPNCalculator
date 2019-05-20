@@ -1,6 +1,5 @@
 package com.example.rpncalculator
 
-import android.support.annotation.IntegerRes
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -21,6 +20,10 @@ class RPNCalculator {
                 "/" -> {
                     val divisor = stack.pop()
                     stack.push(stack.pop() / divisor)
+                }
+                "SQRT" -> {
+                    val squareRootedValue = Math.sqrt(stack.pop().toDouble())
+                    stack.push(squareRootedValue.toInt())
                 }
                 else -> stack.push(Integer.parseInt(token))
             }

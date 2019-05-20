@@ -53,4 +53,9 @@ class RPNCalculatorTest {
     fun `given '3 5 8 * 7 + *' return 141`() {
         assertEquals(141, calc.calculate("3 5 8 * 7 + *"))
     }
+
+    @Test
+    fun `given '9 SQRT' return 3`() {
+        assertEquals(3, calc.calculate("9 SQRT"))
+    }
 }
