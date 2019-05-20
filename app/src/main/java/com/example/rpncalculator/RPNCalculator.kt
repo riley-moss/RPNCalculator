@@ -2,13 +2,22 @@ package com.example.rpncalculator
 
 class RPNCalculator {
     fun calculate(input: String): Int {
-        if(input == "1 1 +")
-            return 2;
-        else if(input == "2 1 -")
-            return 1;
-        else if (input == "5 2 *")
-            return 10;
-        return Integer.parseInt(input)
+
+        if (input.length == 1) {
+            return Integer.parseInt(input)
+        }
+
+        val splitInput = input.split(" ")
+        var output = 0
+
+        val firstOperand = Integer.parseInt(splitInput[0])
+        val secondOperand = Integer.parseInt(splitInput[1])
+        when (splitInput[2]) {
+            "+" -> output = firstOperand + secondOperand
+            "-" -> output = firstOperand - secondOperand
+            "*" -> output = firstOperand * secondOperand
+        }
+        return output
     }
 
 }
