@@ -21,18 +21,18 @@ class RPNCalculator {
 
         for (token in splitInput) {
             when (token) {
-                "+" -> output = stack.pop() + stack.pop()
-                "-" -> output = stack.pop() * -1 + stack.pop()
-                "*" -> output = stack.pop() * stack.pop()
+                "+" -> stack.push(stack.pop() + stack.pop())
+                "-" -> stack.push(stack.pop() * -1 + stack.pop())
+                "*" -> stack.push(stack.pop() * stack.pop())
                 "/" -> {
                     val divisor = stack.pop()
-                    output = stack.pop() / divisor
+                    stack.push(stack.pop() / divisor)
                 }
                 else -> stack.push(Integer.parseInt(token))
             }
         }
 
-        return output
+        return stack.pop()
     }
 
 }
