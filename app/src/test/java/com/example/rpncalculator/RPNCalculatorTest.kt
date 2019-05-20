@@ -37,4 +37,9 @@ class RPNCalculatorTest {
     fun `given '5 2 *' return 10`() {
         assertEquals(10, calc.calculate("5 2 *"))
     }
+
+    @Test
+    fun `given '9 3 forward-slash' return 3`() {
+        assertEquals(3, calc.calculate("9 3 /"))
+    }
 }

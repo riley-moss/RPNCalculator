@@ -16,6 +16,7 @@ class RPNCalculator {
             "+" -> output = firstOperand + secondOperand
             "-" -> output = firstOperand - secondOperand
             "*" -> output = firstOperand * secondOperand
+            "/" -> output = firstOperand / secondOperand
         }
         return output
     }
