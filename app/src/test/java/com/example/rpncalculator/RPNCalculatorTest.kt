@@ -63,4 +63,9 @@ class RPNCalculatorTest {
     fun `given '5 3 4 2 9 1 MAX' return 9`() {
         assertEquals(9, calc.calculate("5 3 4 2 9 1 MAX"))
     }
+
+    @Test
+    fun `given '4 5 MAX 1 2 MAX *' return 10`() {
+        assertEquals(10, calc.calculate("4 5 MAX 1 2 MAX *"))
+    }
 }
