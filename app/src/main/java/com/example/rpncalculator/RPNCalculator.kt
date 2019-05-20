@@ -25,6 +25,16 @@ class RPNCalculator {
                     val squareRootedValue = Math.sqrt(stack.pop().toDouble())
                     stack.push(squareRootedValue.toInt())
                 }
+                "MAX" -> {
+                    var max = stack.pop()
+                    while(!stack.empty()) {
+                        val nextNum = stack.pop()
+                        if(nextNum > max)
+                            max = nextNum
+                    }
+                    stack.push(max)
+
+                }
                 else -> stack.push(Integer.parseInt(token))
             }
         }
