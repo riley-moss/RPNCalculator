@@ -1,6 +1,13 @@
 package com.example.rpncalculator
 
+import android.support.annotation.IntegerRes
+import java.util.*
+import kotlin.collections.ArrayList
+
 class RPNCalculator {
+
+    private val OPERANDS: ArrayList<String> = arrayListOf("+", "-", "*", "/")
+
     fun calculate(input: String): Int {
 
         if (input.length == 1) {
@@ -10,14 +17,21 @@ class RPNCalculator {
         val splitInput = input.split(" ")
         var output = 0
 
-        val firstOperand = Integer.parseInt(splitInput[0])
-        val secondOperand = Integer.parseInt(splitInput[1])
-        when (splitInput[2]) {
-            "+" -> output = firstOperand + secondOperand
-            "-" -> output = firstOperand - secondOperand
-            "*" -> output = firstOperand * secondOperand
-            "/" -> output = firstOperand / secondOperand
+        var stack = Stack<Int>()
+
+        for (token in splitInput) {
+            when (token) {
+                "+" -> output = stack.pop() + stack.pop()
+                "-" -> output = stack.pop() * -1 + stack.pop()
+                "*" -> output = stack.pop() * stack.pop()
+                "/" -> {
+                    val divisor = stack.pop()
+                    output = stack.pop() / divisor
+                }
+                else -> stack.push(Integer.parseInt(token))
+            }
         }
+
         return output
     }
 

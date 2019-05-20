@@ -3,6 +3,7 @@ package com.example.rpncalculator
 import org.junit.Test
 
 import org.junit.Assert.*
+import org.junit.Ignore
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -41,5 +42,11 @@ class RPNCalculatorTest {
     @Test
     fun `given '9 3 forward-slash' return 3`() {
         assertEquals(3, calc.calculate("9 3 /"))
+    }
+
+    @Test
+    @Ignore
+    fun `given '1 2 + 3 +' return 6`() {
+        assertEquals(6, calc.calculate("1 2 + 3 +"))
     }
 }
