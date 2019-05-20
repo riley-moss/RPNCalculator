@@ -48,4 +48,9 @@ class RPNCalculatorTest {
     fun `given '1 2 + 3 +' return 6`() {
         assertEquals(6, calc.calculate("1 2 + 3 +"))
     }
+
+    @Test
+    fun `given '3 5 8 * 7 + *' return 141`() {
+        assertEquals(141, calc.calculate("3 5 8 * 7 + *"))
+    }
 }
