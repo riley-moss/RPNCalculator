@@ -39,4 +39,11 @@ class RPNCalculatorTest {
         assertEquals(expected, actual)
     }
 
+    @Test
+    fun `given two numbers then a minus sign return the first less the second`() {
+        val expected = 1
+        val actual = calc.calculate("2 1 -")
+
+        assertEquals(expected, actual)
+    }
 }
