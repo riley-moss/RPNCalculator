@@ -38,4 +38,5 @@ class RPNCalculatorTest {
 
         assertEquals(expected, actual)
     }
+
 }
