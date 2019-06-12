@@ -22,4 +22,12 @@ class RPNCalculatorTest {
 
         assertEquals(expected, actual)
     }
+
+    @Test
+    fun `given two numbers then a plus sign return the sum of those numbers`() {
+        var expected = 4
+        val actual = calc.calculate("1 3 +")
+
+        assertEquals(expected, actual)
+    }
 }
