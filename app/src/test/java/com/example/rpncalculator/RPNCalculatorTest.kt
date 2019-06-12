@@ -1,5 +1,6 @@
 package com.example.rpncalculator
 
+import org.junit.Assert
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -7,4 +8,12 @@ import org.junit.Ignore
 
 class RPNCalculatorTest {
 
+    @Test
+    fun `given a single number return that number`() {
+        var calc = RPNCalculator()
+        var expected = 1
+
+        val actual = calc.calculate("1")
+        assertEquals(expected, actual)
+    }
 }
