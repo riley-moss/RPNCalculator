@@ -8,9 +8,10 @@ import org.junit.Ignore
 
 class RPNCalculatorTest {
 
+    private var calc = RPNCalculator()
+
     @Test
     fun `given a single number return that number`() {
-        var calc = RPNCalculator()
         var expected = 1
         val actual = calc.calculate("1")
 
@@ -19,7 +20,6 @@ class RPNCalculatorTest {
 
     @Test
     fun `given a different number return that number`() {
-        var calc = RPNCalculator()
         var expected = 2
         val actual = calc.calculate("2")
 
