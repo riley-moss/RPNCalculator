@@ -12,8 +12,17 @@ class RPNCalculatorTest {
     fun `given a single number return that number`() {
         var calc = RPNCalculator()
         var expected = 1
-
         val actual = calc.calculate("1")
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `given a different number return that number`() {
+        var calc = RPNCalculator()
+        var expected = 2
+        val actual = calc.calculate("2")
+
         assertEquals(expected, actual)
     }
 }
