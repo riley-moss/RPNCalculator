@@ -1,6 +1,7 @@
 package com.example.rpncalculator
 
 import org.junit.Assert.assertEquals
+import org.junit.Ignore
 import org.junit.Test
 
 class RPNCalculatorTest {
@@ -83,6 +84,23 @@ class RPNCalculatorTest {
     fun `given longer string with multiple numbers and operators`() {
         val expected = 210
         val actual = calc.calculate("5 3 3 + * 2 / 14 *")
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `given a string of numbers and MAX return the max of all the numbers`() {
+        val expected = 20
+        val actual = calc.calculate("1 2 3 4 5 20 3 5 2 MAX")
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    @Ignore
+    fun `given two MAX lists and multiplication sign, return the product of the two maxes`() {
+        val expected = 30
+        val actual = calc.calculate("3 4 5 MAX 1 2 6 MAX *")
 
         assertEquals(expected, actual)
     }

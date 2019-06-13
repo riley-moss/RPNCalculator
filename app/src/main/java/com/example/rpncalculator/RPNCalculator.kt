@@ -8,22 +8,32 @@ class RPNCalculator {
             return Integer.parseInt(input)
         }
 
-        val operators = arrayListOf("+", "-", "*", "/")
-
         val splitInput = input.split(" ")
         val stack = Stack<Int>()
 
         for (item in splitInput) {
-            stack.push(when (item) {
-                "+" -> stack.pop() + stack.pop()
-                "*" -> stack.pop() * stack.pop()
-                "/" -> {
-                    val divisor = stack.pop()
-                    stack.pop() / divisor
+            stack.push(
+                when (item) {
+                    "+" -> stack.pop() + stack.pop()
+                    "*" -> stack.pop() * stack.pop()
+                    "/" -> {
+                        val divisor = stack.pop()
+                        stack.pop() / divisor
+                    }
+                    "-" -> -stack.pop() + stack.pop()
+                    "MAX" -> {
+                        var max = stack.pop()
+                        while (!stack.empty()) {
+                            val popped = stack.pop()
+                            if(popped > max) {
+                                max = popped
+                            }
+                        }
+                        max
+                    }
+                    else -> Integer.parseInt(item)
                 }
-                "-" -> -stack.pop() + stack.pop()
-                else -> Integer.parseInt(item)
-            })
+            )
         }
         return stack.pop()
     }
