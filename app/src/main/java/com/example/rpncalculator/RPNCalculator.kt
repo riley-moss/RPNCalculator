@@ -3,7 +3,7 @@ package com.example.rpncalculator
 import java.util.*
 
 class RPNCalculator {
-    fun calculate(input: String): Int? {
+    fun calculate(input: String): Int {
         if (input.length == 1) {
             return Integer.parseInt(input)
         }
@@ -14,21 +14,17 @@ class RPNCalculator {
         val stack = Stack<Int>()
 
         for (item in splitInput) {
-            if (item in operators) {
-                stack.push(doMath(stack.pop(), stack.pop(), item))
-            } else {
-                stack.push(Integer.parseInt(item))
-            }
+            stack.push(when (item) {
+                "+" -> stack.pop() + stack.pop()
+                "*" -> stack.pop() * stack.pop()
+                "/" -> {
+                    val divisor = stack.pop()
+                    stack.pop() / divisor
+                }
+                "-" -> -stack.pop() + stack.pop()
+                else -> Integer.parseInt(item)
+            })
         }
         return stack.pop()
-    }
-
-    private fun doMath(firstNum: Int, secondNum: Int, operator: String): Int {
-        return when (operator) {
-            "+" -> firstNum + secondNum
-            "*" -> firstNum * secondNum
-            "/" -> secondNum / firstNum
-            else -> secondNum - firstNum
-        }
     }
 }
