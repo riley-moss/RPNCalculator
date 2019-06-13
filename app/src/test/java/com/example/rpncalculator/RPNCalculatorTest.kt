@@ -54,4 +54,12 @@ class RPNCalculatorTest {
 
         assertEquals(expected, actual)
     }
+
+    @Test
+    fun `given two numbers then a division sign return the first divided by the second`() {
+        val expected = 3
+        val actual = calc.calculate("12 4 /")
+
+        assertEquals(expected, actual)
+    }
 }
