@@ -64,9 +64,25 @@ class RPNCalculatorTest {
     }
 
     @Test
-    fun `given two numbers, plus sign, another number, and another plus sign`() {
+    fun `given two numbers, plus sign, another number, then another plus sign`() {
         val expected = 6
         val actual = calc.calculate("1 2 + 3 +")
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `given three numbers, a plus sign, then a multiplication sign`() {
+        val expected = 8
+        val actual = calc.calculate("2 1 3 + *")
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `given longer string with multiple numbers and operators`() {
+        val expected = 210
+        val actual = calc.calculate("5 3 3 + * 2 / 14 *")
 
         assertEquals(expected, actual)
     }
