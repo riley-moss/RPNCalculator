@@ -104,4 +104,12 @@ class RPNCalculatorTest {
         assertEquals(expected, actual)
     }
 
+    @Test
+    fun `given a number and SQRT return the square root of that number`() {
+        val expected = 4
+        val actual = calc.calculate("16 SQRT")
+
+        assertEquals(expected, actual)
+    }
+
 }

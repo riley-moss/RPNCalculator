@@ -33,6 +33,7 @@ class RPNCalculator {
                         prevMaxIndex++
                         max
                     }
+                    "SQRT" -> Math.sqrt(stack.pop().toDouble()).toInt()
                     else -> Integer.parseInt(item)
                 }
             )
