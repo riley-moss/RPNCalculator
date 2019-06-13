@@ -46,4 +46,12 @@ class RPNCalculatorTest {
 
         assertEquals(expected, actual)
     }
+
+    @Test
+    fun `given two numbers then a multiplication sign return the product of those numbers`() {
+        val expected = 20
+        val actual = calc.calculate("4 5 *")
+
+        assertEquals(expected, actual)
+    }
 }
