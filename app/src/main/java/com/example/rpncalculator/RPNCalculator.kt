@@ -11,6 +11,7 @@ class RPNCalculator {
         val splitInput = input.split(" ")
         val stack = Stack<Int>()
 
+        var prevMaxIndex = 0
         for (item in splitInput) {
             stack.push(
                 when (item) {
@@ -23,12 +24,13 @@ class RPNCalculator {
                     "-" -> -stack.pop() + stack.pop()
                     "MAX" -> {
                         var max = stack.pop()
-                        while (!stack.empty()) {
+                        while (stack.size > prevMaxIndex) {
                             val popped = stack.pop()
                             if(popped > max) {
                                 max = popped
                             }
                         }
+                        prevMaxIndex++
                         max
                     }
                     else -> Integer.parseInt(item)

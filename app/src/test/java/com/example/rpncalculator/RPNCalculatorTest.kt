@@ -97,7 +97,6 @@ class RPNCalculatorTest {
     }
 
     @Test
-    @Ignore
     fun `given two MAX lists and multiplication sign, return the product of the two maxes`() {
         val expected = 30
         val actual = calc.calculate("3 4 5 MAX 1 2 6 MAX *")
