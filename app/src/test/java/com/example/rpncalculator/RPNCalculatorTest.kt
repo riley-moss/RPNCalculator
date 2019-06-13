@@ -62,4 +62,13 @@ class RPNCalculatorTest {
 
         assertEquals(expected, actual)
     }
+
+    @Test
+    fun `given two numbers, plus sign, another number, and another plus sign`() {
+        val expected = 6
+        val actual = calc.calculate("1 2 + 3 +")
+
+        assertEquals(expected, actual)
+    }
+
 }
