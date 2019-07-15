@@ -5,6 +5,7 @@ import org.junit.Test
 
 class RPNCalculatorTest {
 
+    //Single integer input
     @Test
     fun `given a single number return that number`() {
         val calculator = RPNCalculator()
@@ -28,6 +29,16 @@ class RPNCalculatorTest {
         val calculator = RPNCalculator()
         val expected = 3
         val actual = calculator.solveRPN("3")
+
+        assertEquals(expected, actual)
+    }
+
+    //Two integer and operand input
+    @Test
+    fun `given two integers and a plus sign return sum of integers`() {
+        val calculator = RPNCalculator()
+        val expected = 2
+        val actual = calculator.solveRPN("1 1 +")
 
         assertEquals(expected, actual)
     }
