@@ -1,24 +1,29 @@
 package com.example.rpncalculator
 
+import java.util.*
+
 class RPNCalculator {
     fun solveRPN(rpnString: String): Int {
-        if (rpnString.length == 1)
-            return Integer.parseInt(rpnString)
-
         val rpnArray = rpnString.split(" ")
 
-        val firstOutput = calculateBasedOnOperand(rpnArray[0], rpnArray[1], rpnArray[2])
-        if (rpnArray.size == 3)
-            return firstOutput
-        return calculateBasedOnOperand(firstOutput.toString(), rpnArray[3], rpnArray[4])
+        val stack = Stack<Int>()
+        for(input in rpnArray){
+            if(input in listOf("+","-","*","/")) {
+                return calculateBasedOnOperand(stack.pop(), stack.pop(), input)
+            } else {
+                stack.push(input.toInt())
+            }
+        }
+
+        return stack.pop()
     }
 
-    private fun calculateBasedOnOperand(firstNum: String, secondNum: String, operand: String): Int {
+    private fun calculateBasedOnOperand(firstNum: Int, secondNum: Int, operand: String): Int {
         return when (operand) {
-            "+" -> firstNum.toInt() + secondNum.toInt()
-            "-" -> firstNum.toInt() - secondNum.toInt()
-            "*" -> firstNum.toInt() * secondNum.toInt()
-            else -> firstNum.toInt() / secondNum.toInt()
+            "+" -> firstNum + secondNum
+            "-" -> secondNum - firstNum
+            "*" -> firstNum * secondNum
+            else -> secondNum / firstNum
         }
     }
 
