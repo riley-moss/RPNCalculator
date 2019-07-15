@@ -39,4 +39,13 @@ class RPNCalculatorTest {
 
         assertEquals(expected, actual)
     }
+
+    @Test
+    fun `given two integers and a minus sign return difference`() {
+        val expected = 0
+        val actual  = calculator.solveRPN("1 1 -")
+
+        assertEquals(expected, actual)
+    }
+
 }
