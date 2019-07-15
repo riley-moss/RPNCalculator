@@ -32,7 +32,7 @@ class RPNCalculatorTest {
         assertEquals(expected, actual)
     }
 
-    //Two integer and operand input - Addition
+    //Two integers and operand input - Addition
     @Test
     fun `given two integers and a plus sign return sum of integers`() {
         val expected = 2
@@ -57,6 +57,7 @@ class RPNCalculatorTest {
         assertEquals(expected, actual)
     }
 
+    //Two integers and operand input - Other operands
     @Test
     fun `given two integers and a minus sign return difference`() {
         val expected = 0
@@ -64,5 +65,14 @@ class RPNCalculatorTest {
 
         assertEquals(expected, actual)
     }
+
+    @Test
+    fun `given two integers and asterik return product`() {
+        val expected = 4
+        val actual  = calculator.solveRPN("2 2 *")
+
+        assertEquals(expected, actual)
+    }
+
 
 }
