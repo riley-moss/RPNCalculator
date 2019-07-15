@@ -107,4 +107,13 @@ class RPNCalculatorTest {
         assertEquals(expected, actual)
     }
 
+    //Many integer and many operand input
+    @Test
+    fun `given many integers and many operands return calculated answer`() {
+        val expected = 2
+        val actual = calculator.solveRPN("4 3 2 * + 5 /")
+
+        assertEquals(expected, actual)
+    }
+
 }
