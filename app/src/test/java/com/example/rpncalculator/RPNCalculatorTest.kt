@@ -74,5 +74,12 @@ class RPNCalculatorTest {
         assertEquals(expected, actual)
     }
 
+    @Test
+    fun `given two integers and forward slash return quotient`() {
+        val expected = 3
+        val actual  = calculator.solveRPN("9 3 /")
+
+        assertEquals(expected, actual)
+    }
 
 }

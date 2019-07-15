@@ -10,7 +10,9 @@ class RPNCalculator {
             return rpnArray[0].toInt() + rpnArray[1].toInt()
         else if (rpnArray[2] == "-")
             return rpnArray[0].toInt() - rpnArray[1].toInt()
-        return rpnArray[0].toInt() * rpnArray[1].toInt()
+        else if (rpnArray[2] == "*")
+            return rpnArray[0].toInt() * rpnArray[1].toInt()
+        return rpnArray[0].toInt() / rpnArray[1].toInt()
     }
 
 }
