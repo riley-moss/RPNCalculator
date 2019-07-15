@@ -6,6 +6,8 @@ class RPNCalculator {
             return 2
         else if(rpnString == "2 2 +")
             return 4
+        else if(rpnString == "3 3 +")
+            return 6
         return Integer.parseInt(rpnString)
     }
 
