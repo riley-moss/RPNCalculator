@@ -6,12 +6,16 @@ class RPNCalculator {
             return Integer.parseInt(rpnString)
 
         val rpnArray = rpnString.split(" ")
-        
-        return when(rpnArray[2]) {
-            "+" -> rpnArray[0].toInt() + rpnArray[1].toInt()
-            "-" -> rpnArray[0].toInt() - rpnArray[1].toInt()
-            "*" -> rpnArray[0].toInt() * rpnArray[1].toInt()
-            else -> rpnArray[0].toInt() / rpnArray[1].toInt()
+
+        return calculateBasedOnOperand(rpnArray[0], rpnArray[1], rpnArray[2])
+    }
+
+    private fun calculateBasedOnOperand(firstNum: String, secondNum: String, operand:String): Int {
+        return when (operand) {
+            "+" -> firstNum.toInt() + secondNum.toInt()
+            "-" -> firstNum.toInt() - secondNum.toInt()
+            "*" -> firstNum.toInt() * secondNum.toInt()
+            else -> firstNum.toInt() / secondNum.toInt()
         }
     }
 

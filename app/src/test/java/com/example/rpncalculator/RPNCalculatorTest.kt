@@ -82,4 +82,14 @@ class RPNCalculatorTest {
         assertEquals(expected, actual)
     }
 
+    //Three integers and two operand input
+    @Test
+    @Ignore
+    fun `given multiple integers and two plus signs return sum of all numbers`() {
+        val expected = 3
+        val actual = calculator.solveRPN("1 1 + 1 +")
+
+        assertEquals(expected, actual)
+    }
+
 }
