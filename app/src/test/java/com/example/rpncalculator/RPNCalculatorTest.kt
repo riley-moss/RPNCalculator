@@ -91,4 +91,12 @@ class RPNCalculatorTest {
         assertEquals(expected, actual)
     }
 
+    @Test
+    fun `given multiple integers and two different operands return output`() {
+        val expected = 10
+        val actual = calculator.solveRPN("1 1 + 5 *")
+
+        assertEquals(expected, actual)
+    }
+
 }
