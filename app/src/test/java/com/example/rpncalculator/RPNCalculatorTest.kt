@@ -1,6 +1,7 @@
 package com.example.rpncalculator
 
 import org.junit.Assert.assertEquals
+import org.junit.Ignore
 import org.junit.Test
 
 class RPNCalculatorTest {
@@ -41,6 +42,15 @@ class RPNCalculatorTest {
     }
 
     @Test
+    fun `given two different integers and a plus sign return sum`() {
+        val expected = 4
+        val actual = calculator.solveRPN("2 2 +")
+
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    @Ignore
     fun `given two integers and a minus sign return difference`() {
         val expected = 0
         val actual  = calculator.solveRPN("1 1 -")
