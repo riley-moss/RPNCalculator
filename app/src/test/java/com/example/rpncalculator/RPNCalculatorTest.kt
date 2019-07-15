@@ -13,4 +13,13 @@ class RPNCalculatorTest {
 
         assertEquals(expected, actual)
     }
+
+    @Test
+    fun `given a different single number return that number`() {
+        val calculator = RPNCalculator()
+        val expected = 2
+        val actual = calculator.solveRPN("2")
+
+        assertEquals(expected, actual)
+    }
 }
