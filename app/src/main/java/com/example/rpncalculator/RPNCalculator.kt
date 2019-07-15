@@ -9,7 +9,7 @@ class RPNCalculator {
         val stack = Stack<Int>()
         for(input in rpnArray){
             if(input in listOf("+","-","*","/")) {
-                return calculateBasedOnOperand(stack.pop(), stack.pop(), input)
+                stack.push(calculateBasedOnOperand(stack.pop(), stack.pop(), input))
             } else {
                 stack.push(input.toInt())
             }
