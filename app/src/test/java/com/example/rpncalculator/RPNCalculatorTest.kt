@@ -58,7 +58,6 @@ class RPNCalculatorTest {
     }
 
     @Test
-    @Ignore
     fun `given two integers and a minus sign return difference`() {
         val expected = 0
         val actual  = calculator.solveRPN("1 1 -")

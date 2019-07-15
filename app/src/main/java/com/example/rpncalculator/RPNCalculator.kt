@@ -6,7 +6,9 @@ class RPNCalculator {
             return Integer.parseInt(rpnString)
 
         val rpnArray = rpnString.split(" ")
-        return rpnArray[0].toInt() + rpnArray[1].toInt()
+        if(rpnArray[2] == "+")
+            return rpnArray[0].toInt() + rpnArray[1].toInt()
+        return rpnArray[0].toInt() - rpnArray[1].toInt()
     }
 
 }
